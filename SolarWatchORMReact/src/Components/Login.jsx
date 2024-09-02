@@ -29,6 +29,10 @@ const Login = ({ setAuth }) => {
     }
   };
 
+  const goBack = () => {
+    navigate('/');
+  };
+
   return (
     <div className="container">
       <h1>Login</h1>
@@ -51,6 +55,8 @@ const Login = ({ setAuth }) => {
         </label>
         <button type="submit">Login</button>
       </form>
+
+      <button className='goback-button' onClick={goBack}>Go Back</button>
     </div>
   );
 };
