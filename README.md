@@ -47,21 +47,39 @@ cd SolarWatch_PUBLIC
     ```bash
     cd SolarWatchORM
     cd SolarWatchORM
-    ```
+    ``` 
+ 
+2. Replace the data marked with square brackets in appsettings.json with your own:
+    
+   ```json
+    {
+        "ConnectionStrings": {
+            "DefaultConnection": "[YOUR_DATABASE_CONNECTION_STRING]"
+        },
+        "ApiKeys": {
+            "CityApiKey": "[YOUR_OPENWEATHER_GEOCODING_API_KEY]"
+        },
+        "Jwt": {
+            "ValidIssuer": "[YOUR_HOST]",
+            "ValidAudience": "[YOUR_HOST]",
+            "IssuerSigningKey": "[YOUR_GENERATED_SECURE_KEY]"
+        }
+    }
+   ```
 
-2. Install the dependencies:
+3. Install the dependencies:
 
     ```bash
     dotnet restore
     ```
 
-3. Build the application:
+4. Build the application:
 
     ```bash
     dotnet build
     ```
 
-4. Run the application:
+5. Run the application:
 
     ```bash
     dotnet run
@@ -82,16 +100,19 @@ cd SolarWatch_PUBLIC
     cd ../SolarWatchORMReact
     ```
 
-2. Install the dependencies:
+
+3. In the "vite.config.js" file replace the [BACKEND_URL] to url your backend is running on to make the proxy work.
+
+4. Install the dependencies:
 
     ```bash
     npm install
     ```
 
-3. Run the application:
+5. Run the application:
 
     ```bash
-    npm run
+    npm run dev
     ```
 
    The React frontend will be running locally on `http://localhost:5173`.
@@ -102,7 +123,7 @@ cd SolarWatch_PUBLIC
 2. Register and Login to access the solar watch.
 3. Enter a city name and a date in the input fields and submit it to retrieve data.
 
-## API Endpoints
+## API Endpoint
 
 The backend API exposes the following endpoint to get the solar data:
 
