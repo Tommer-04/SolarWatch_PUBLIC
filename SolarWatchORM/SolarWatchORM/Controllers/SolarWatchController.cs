@@ -46,7 +46,7 @@ namespace SolarWatchORM.Controllers
 
                 if (city == null)
                 {
-                    return NotFound("No city can be found with the given name!");
+                    return NotFound(new { status = 404, message = "Invalid city!" });
                 }
 
                 if(await _cityRepo.SearchByName(city.Name) == null)
@@ -65,7 +65,7 @@ namespace SolarWatchORM.Controllers
 
                 if (sun == null)
                 {
-                    return NotFound("Invalid date!");
+                    return NotFound(new { status = 404, message = "Invalid date!" });
                 }
 
                 await _sunRepo.AddNewSunRecord(sun);

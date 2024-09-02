@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.VisualStudio.TestPlatform.CommunicationUtilities;
 using SolarWatchORM.Model;
 using SolarWatchORM.Service.UserService;
 
@@ -27,7 +28,7 @@ namespace SolarWatchORM.Controllers
 
             if (result.Succeeded)
             {
-                return Ok("User registered successfully.");
+                return Ok(new {status = 200, message = "Registered successfully"});
             }
 
             foreach (var error in result.Errors)
@@ -59,10 +60,10 @@ namespace SolarWatchORM.Controllers
                 };
 
                 Response.Cookies.Append("jwt", token, cookieOptions);
-                return Ok("Successful login!");
+                return Ok(new { status = 200, message = "Logged in successfully" }); ;
             }
 
-            return Unauthorized("Invalid username or password.");
+            return NotFound(new { status = 404, message = "Invalid username or password" });
         }
     }
 
