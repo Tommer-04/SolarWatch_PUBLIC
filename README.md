@@ -2,7 +2,7 @@
 # Solar Watch Application
 
 This project is a web application that allows users to enter a city name and a date to receive the sunrise and sunset times for that city on the specified date. The application consists of a backend web API built with .NET Core and a frontend built with React.
-
+It also uses an SQL database to save data about cities and their corresponding sun data on a given date that has been already searched to reduce the number of API calls as much as possible.
 ![Project Showcase](showcase.png)
 
 ## Project Structure
