@@ -3,6 +3,8 @@
 
 This project is a web application that allows users to enter a city name and a date to receive the sunrise and sunset times for that city on the specified date. The application consists of a backend web API built with .NET Core and a frontend built with React.
 
+![Project Showcase](showcase.png)
+
 ## Project Structure
 
 ```
