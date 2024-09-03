@@ -91,12 +91,16 @@ var app = builder.Build();
 
 using (var scope = app.Services.CreateScope())
 {
+
     var dbContext = scope.ServiceProvider.GetRequiredService<SolarWatchContext>();
     var userContext = scope.ServiceProvider.GetRequiredService<IdentityContext>();
 
-    dbContext.Database.Migrate();
+    if (dbContext.Database.IsRelational() && userContext.Database.IsRelational())
+    {
+        dbContext.Database.Migrate();
 
-    userContext.Database.Migrate();
+        userContext.Database.Migrate();
+    }       
 
     var services = scope.ServiceProvider;
     await SeedData.Initialize(services);
