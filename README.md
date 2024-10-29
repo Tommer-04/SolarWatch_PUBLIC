@@ -13,13 +13,13 @@ root
 ├── SolarWatchORM/               # .NET Core Web API project
 │   ├── SolarWatchORM/           # Main application folder
 │   │   ├── Controllers/         # API controllers
-│   │   ├── Model/              # Data models
+│   │   ├── Model/               # Data models
 │   │   └── ...                  # Other backend files and directories
 │   │
 │   └── IntegrationTests/        # Integration tests for the application
 │       └── ...                  # Test files and directories
 │ 
-└── SolarWatchORMReact/         # React application
+└── SolarWatchORMReact/          # React application
     ├── src/                     # Source files
     ├── public/                  # Public files
     └── ...                      # Other frontend files and directories
